@@ -5,7 +5,7 @@ using Fusion;
 using Fusion.Sockets;
 using System;
 
-public class Spawner : MonoBehaviour, INetworkRunnerCallbacks
+/*public class Spawner : MonoBehaviour, INetworkRunnerCallbacks
 {
     public NetworkPlayer playerPrefab;
 
@@ -43,4 +43,4 @@ public class Spawner : MonoBehaviour, INetworkRunnerCallbacks
     public void OnReliableDataReceived(NetworkRunner runner, PlayerRef player, ArraySegment<byte> data) { }
     public void OnSceneLoadDone(NetworkRunner runner) { }
     public void OnSceneLoadStart(NetworkRunner runner) { }
-}
+}*/

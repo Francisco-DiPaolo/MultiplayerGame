@@ -2,17 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Utils : MonoBehaviour
+public static class Utils
 {
-    // Start is called before the first frame update
-    void Start()
+    public static Vector3 GetRandomSpawnPoint()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        return new Vector3(Random.Range(-20, 20), 4, Random.Range(-20, 20));
     }
 }
