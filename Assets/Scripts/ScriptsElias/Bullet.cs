@@ -15,7 +15,6 @@ public class Bullet : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Plataform"))
         {
-            Debug.Log("Hola");
             rb.constraints = RigidbodyConstraints.FreezePositionY;
         }
     }

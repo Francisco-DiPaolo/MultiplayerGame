@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Fusion;
+using Cinemachine;
 
 public class NetworkPlayer : NetworkBehaviour, IPlayerLeft
 {
@@ -10,7 +11,10 @@ public class NetworkPlayer : NetworkBehaviour, IPlayerLeft
     void Start()
     {
         if (Object.HasInputAuthority)
-            FindObjectOfType<FollowCamera>().target = this.transform;
+        {
+            GameObject.FindGameObjectWithTag("VirtualCamera").GetComponent<CinemachineVirtualCamera>().Follow = transform.GetChild(0);
+            GameObject.FindGameObjectWithTag("VirtualCamera").GetComponent<CinemachineVirtualCamera>().LookAt = transform.GetChild(0);
+        }
     }
 
     public override void Spawned()

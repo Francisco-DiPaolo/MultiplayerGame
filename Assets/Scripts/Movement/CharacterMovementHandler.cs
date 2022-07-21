@@ -8,33 +8,26 @@ public class CharacterMovementHandler : NetworkBehaviour
     Vector2 viewInput;
 
     // Rotation
-    float cameraRotationX = 0;
+    public float velocity;
+    public float rotationSpeed;
 
     // Other components
     Camera localCamera;
 
+    GameObject cameraCine;
+
+
     Rigidbody rb;
 
     public float inputForce;
+    public float turnSmoothTime = 0.1f;
+    float turnSmoothVelocity;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        //localCamera = GetComponentInChildren<Camera>();
-    }
 
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        /*cameraRotationX += viewInput.y * Time.deltaTime;
-        cameraRotationX = Mathf.Clamp(cameraRotationX, -90, 90);
-
-        localCamera.transform.localRotation = Quaternion.Euler(cameraRotationX, 0, 0);*/
+        cameraCine = FindObjectOfType<Camera>().gameObject;
     }
 
     public override void FixedUpdateNetwork()
@@ -43,18 +36,22 @@ public class CharacterMovementHandler : NetworkBehaviour
         if (GetInput(out NetworkInputData networkInputData))
         {
             //Move
-            rb.AddForce(new Vector3 (networkInputData.movementInput.x, 0, networkInputData.movementInput.y) * inputForce * Runner.DeltaTime, ForceMode.Force);
-            
-            // Rotate the view
 
+            Vector3 movementDirection = new Vector3(networkInputData.movementInput.x, 0, networkInputData.movementInput.y);
+            rb.AddForce(movementDirection * inputForce * Runner.DeltaTime, ForceMode.Force);
+
+            //transform.LookAt(cameraCine.transform.position);
+            
+            if(movementDirection != Vector3.zero)
+            {
+                Quaternion toRotation = Quaternion.LookRotation(movementDirection, Vector3.up);
+
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
+            }
+
+            //rb.AddTorque(0, networkInputData.movementInput.x * velocity, 0);
 
             /*
-            // Move
-            Vector3 moveDirection = transform.forward * networkInputData.movementInput.y + transform.right * networkInputData.movementInput.x;
-            moveDirection.Normalize();
-
-            networkCharacterControllerPrototypeCustom.Move(moveDirection);
-
             // Jump
             if (networkInputData.isJumpPressed)
                 networkCharacterControllerPrototypeCustom.Jump();

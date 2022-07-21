@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Plataform
+  - VirtualCamera
   layers:
   - Default
   - TransparentFX
