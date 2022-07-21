@@ -11,7 +11,6 @@ public class CharacterMovementHandler : NetworkBehaviour
     float cameraRotationX = 0;
 
     // Other components
-    //NetworkCharacterControllerPrototypeCustom networkCharacterControllerPrototypeCustom;
     Camera localCamera;
 
     Rigidbody rb;
@@ -20,7 +19,6 @@ public class CharacterMovementHandler : NetworkBehaviour
 
     private void Awake()
     {
-        //networkCharacterControllerPrototypeCustom = GetComponent<NetworkCharacterControllerPrototypeCustom>();
         rb = GetComponent<Rigidbody>();
         //localCamera = GetComponentInChildren<Camera>();
     }
@@ -33,10 +31,10 @@ public class CharacterMovementHandler : NetworkBehaviour
     // Update is called once per frame
     void Update()
     {
-        //cameraRotationX += viewInput.y * Time.deltaTime * networkCharacterControllerPrototypeCustom.viewUpDownRotationSpeed;
-        //cameraRotationX = Mathf.Clamp(cameraRotationX, -90, 90);
+        /*cameraRotationX += viewInput.y * Time.deltaTime;
+        cameraRotationX = Mathf.Clamp(cameraRotationX, -90, 90);
 
-        //localCamera.transform.localRotation = Quaternion.Euler(cameraRotationX, 0, 0);
+        localCamera.transform.localRotation = Quaternion.Euler(cameraRotationX, 0, 0);*/
     }
 
     public override void FixedUpdateNetwork()
@@ -46,11 +44,11 @@ public class CharacterMovementHandler : NetworkBehaviour
         {
             //Move
             rb.AddForce(new Vector3 (networkInputData.movementInput.x, 0, networkInputData.movementInput.y) * inputForce * Runner.DeltaTime, ForceMode.Force);
+            
+            // Rotate the view
+
 
             /*
-            // Rotate the view
-            networkCharacterControllerPrototypeCustom.Rotate(networkInputData.rotationInput);
-
             // Move
             Vector3 moveDirection = transform.forward * networkInputData.movementInput.y + transform.right * networkInputData.movementInput.x;
             moveDirection.Normalize();
