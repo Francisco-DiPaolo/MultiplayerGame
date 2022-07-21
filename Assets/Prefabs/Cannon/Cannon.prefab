@@ -142,11 +142,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 5148596604133932654}
   bulletPrefab:
-  - {fileID: 3205245980927486569, guid: e56b4777fd7fdd74ba121aadffc4adf6, type: 3}
-  - {fileID: 1669647873415342003, guid: 11e6e7bfd2071654490890f10538a8da, type: 3}
-  - {fileID: 417260318000252137, guid: 2dbd30a15740be54f8f456c5fe39f3f9, type: 3}
-  - {fileID: 4973035994798153689, guid: e3c5a09cc70645f48a8e8400b3ca08ca, type: 3}
-  bulletForce: 50
+  - {fileID: 7157299269898236958, guid: 04880d8a9d153c64d8671ed25e99eb78, type: 3}
+  - {fileID: 3833878384088154026, guid: affec18fc1599404e91a480f1a1aed6f, type: 3}
+  - {fileID: 2553675541531976700, guid: f0fea9690392e6a45a0f61ab7aa80f9e, type: 3}
+  - {fileID: 1697967389166641018, guid: c7fbe68a44d3a0942908521d9940090b, type: 3}
+  bulletForce: 5000
   timeSpawn: 2
   repeatSpawnRate: 2
 --- !u!1 &5148596604530575625

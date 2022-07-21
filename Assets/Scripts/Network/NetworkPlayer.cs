@@ -9,7 +9,8 @@ public class NetworkPlayer : NetworkBehaviour, IPlayerLeft
 
     void Start()
     {
-        
+        if (Object.HasInputAuthority)
+            FindObjectOfType<FollowCamera>().target = this.transform;
     }
 
     public override void Spawned()

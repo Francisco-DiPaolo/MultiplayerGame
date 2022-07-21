@@ -11,13 +11,18 @@ public class CharacterMovementHandler : NetworkBehaviour
     float cameraRotationX = 0;
 
     // Other components
-    NetworkCharacterControllerPrototypeCustom networkCharacterControllerPrototypeCustom;
+    //NetworkCharacterControllerPrototypeCustom networkCharacterControllerPrototypeCustom;
     Camera localCamera;
+
+    Rigidbody rb;
+
+    public float inputForce;
 
     private void Awake()
     {
-        networkCharacterControllerPrototypeCustom = GetComponent<NetworkCharacterControllerPrototypeCustom>();
-        localCamera = GetComponentInChildren<Camera>();
+        //networkCharacterControllerPrototypeCustom = GetComponent<NetworkCharacterControllerPrototypeCustom>();
+        rb = GetComponent<Rigidbody>();
+        //localCamera = GetComponentInChildren<Camera>();
     }
 
     void Start()
@@ -28,10 +33,10 @@ public class CharacterMovementHandler : NetworkBehaviour
     // Update is called once per frame
     void Update()
     {
-        cameraRotationX += viewInput.y * Time.deltaTime * networkCharacterControllerPrototypeCustom.viewUpDownRotationSpeed;
-        cameraRotationX = Mathf.Clamp(cameraRotationX, -90, 90);
+        //cameraRotationX += viewInput.y * Time.deltaTime * networkCharacterControllerPrototypeCustom.viewUpDownRotationSpeed;
+        //cameraRotationX = Mathf.Clamp(cameraRotationX, -90, 90);
 
-        localCamera.transform.localRotation = Quaternion.Euler(cameraRotationX, 0, 0);
+        //localCamera.transform.localRotation = Quaternion.Euler(cameraRotationX, 0, 0);
     }
 
     public override void FixedUpdateNetwork()
@@ -39,6 +44,10 @@ public class CharacterMovementHandler : NetworkBehaviour
         // Get the input from the network
         if (GetInput(out NetworkInputData networkInputData))
         {
+            //Move
+            rb.AddForce(new Vector3 (networkInputData.movementInput.x, 0, networkInputData.movementInput.y) * inputForce * Runner.DeltaTime, ForceMode.Force);
+
+            /*
             // Rotate the view
             networkCharacterControllerPrototypeCustom.Rotate(networkInputData.rotationInput);
 
@@ -51,6 +60,7 @@ public class CharacterMovementHandler : NetworkBehaviour
             // Jump
             if (networkInputData.isJumpPressed)
                 networkCharacterControllerPrototypeCustom.Jump();
+            */
         }
     }
 
