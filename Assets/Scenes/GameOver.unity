@@ -166,7 +166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c403916cf5db8104a837ecfe69148b95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelChange: SampleScene
+  levelChange: ScenaElias
 --- !u!1 &248808788
 GameObject:
   m_ObjectHideFlags: 0

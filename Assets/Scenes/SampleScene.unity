@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5148596604281657025, guid: 4e7ac01917476fc46a84dcb6d852c93f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5148596604281657031, guid: 4e7ac01917476fc46a84dcb6d852c93f, type: 3}
       propertyPath: bulletPrefab.Array.data[0]
       value: 
@@ -196,7 +200,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5148596604530575625, guid: 4e7ac01917476fc46a84dcb6d852c93f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e7ac01917476fc46a84dcb6d852c93f, type: 3}
