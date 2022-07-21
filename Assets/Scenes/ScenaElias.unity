@@ -278,15 +278,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3144699447867326219, guid: 953f5ea515b24404a9dc13581fc67e39, type: 3}
       propertyPath: m_FollowOffset.y
-      value: 12
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3144699447867326219, guid: 953f5ea515b24404a9dc13581fc67e39, type: 3}
       propertyPath: m_FollowOffset.z
-      value: -32
+      value: -28
       objectReference: {fileID: 0}
     - target: {fileID: 3144699449168390290, guid: 953f5ea515b24404a9dc13581fc67e39, type: 3}
       propertyPath: m_LocalPosition.x
       value: -138.59175
+      objectReference: {fileID: 0}
+    - target: {fileID: 3144699449168390290, guid: 953f5ea515b24404a9dc13581fc67e39, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 264.75705
       objectReference: {fileID: 0}
     - target: {fileID: 3144699449168390290, guid: 953f5ea515b24404a9dc13581fc67e39, type: 3}
       propertyPath: m_LocalPosition.z
