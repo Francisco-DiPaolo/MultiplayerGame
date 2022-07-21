@@ -107,6 +107,7 @@ GameObject:
   - component: {fileID: 7773964405082353814}
   - component: {fileID: 6753346714571446274}
   - component: {fileID: 2437152991669270359}
+  - component: {fileID: -3255383222156174597}
   m_Layer: 0
   m_Name: Proyectil
   m_TagString: Untagged
@@ -195,3 +196,15 @@ MonoBehaviour:
   NetworkedBehaviours:
   - {fileID: 6753346714571446274}
   SimulationBehaviours: []
+--- !u!114 &-3255383222156174597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7157299269898236958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c8822ac7e60c7642b79dda95786fe67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

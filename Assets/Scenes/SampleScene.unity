@@ -714,6 +714,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plataforma
       objectReference: {fileID: 0}
+    - target: {fileID: 182175106796980946, guid: 93fb310fe80194c468f60fc168e4eafd, type: 3}
+      propertyPath: m_TagString
+      value: Plataform
+      objectReference: {fileID: 0}
     - target: {fileID: 706194224222949480, guid: 93fb310fe80194c468f60fc168e4eafd, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -757,6 +761,10 @@ PrefabInstance:
     - target: {fileID: 706194224222949480, guid: 93fb310fe80194c468f60fc168e4eafd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 875265058467268995, guid: 93fb310fe80194c468f60fc168e4eafd, type: 3}
+      propertyPath: m_TagString
+      value: Plataform
       objectReference: {fileID: 0}
     - target: {fileID: 2337528381959938872, guid: 93fb310fe80194c468f60fc168e4eafd, type: 3}
       propertyPath: m_Convex
