@@ -757,7 +757,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 298050474}
   bulletPrefab: {fileID: 2553675541531976700, guid: f0fea9690392e6a45a0f61ab7aa80f9e, type: 3}
-  bulletForce: 13000
+  bulletForce: 60000
 --- !u!1 &1098305954
 GameObject:
   m_ObjectHideFlags: 0
@@ -805,7 +805,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 1248102156}
   bulletPrefab: {fileID: 2553675541531976700, guid: f0fea9690392e6a45a0f61ab7aa80f9e, type: 3}
-  bulletForce: 13000
+  bulletForce: 60000
 --- !u!1 &1163577908
 GameObject:
   m_ObjectHideFlags: 0
@@ -853,7 +853,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 1799372355}
   bulletPrefab: {fileID: 2553675541531976700, guid: f0fea9690392e6a45a0f61ab7aa80f9e, type: 3}
-  bulletForce: 13000
+  bulletForce: 60000
 --- !u!1 &1181920285
 GameObject:
   m_ObjectHideFlags: 0
@@ -2563,7 +2563,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 6b19b038159f98b449e72aecbdb64e11, type: 2}
     - target: {fileID: 3872961362753450576, guid: 4e7ac01917476fc46a84dcb6d852c93f, type: 3}
       propertyPath: bulletForce
-      value: 13000
+      value: 60000
       objectReference: {fileID: 0}
     - target: {fileID: 3872961362753450576, guid: 4e7ac01917476fc46a84dcb6d852c93f, type: 3}
       propertyPath: bulletPrefab
