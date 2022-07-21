@@ -312,6 +312,26 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.006340318
       objectReference: {fileID: 0}
+    - target: {fileID: 3144699449168390293, guid: 953f5ea515b24404a9dc13581fc67e39, type: 3}
+      propertyPath: orthographic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3144699449168390293, guid: 953f5ea515b24404a9dc13581fc67e39, type: 3}
+      propertyPath: field of view
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 3144699449168390293, guid: 953f5ea515b24404a9dc13581fc67e39, type: 3}
+      propertyPath: m_FOVAxisMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3144699449168390293, guid: 953f5ea515b24404a9dc13581fc67e39, type: 3}
+      propertyPath: far clip plane
+      value: 5000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3144699449168390293, guid: 953f5ea515b24404a9dc13581fc67e39, type: 3}
+      propertyPath: near clip plane
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 3331475592533707107, guid: 953f5ea515b24404a9dc13581fc67e39, type: 3}
       propertyPath: m_Name
       value: Camera
