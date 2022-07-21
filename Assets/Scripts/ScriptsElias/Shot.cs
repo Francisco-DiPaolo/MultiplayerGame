@@ -7,15 +7,15 @@ public class Shot : MonoBehaviour
     
     [Header("Shooting")]
     [SerializeField] Transform firePoint;
-    [SerializeField] GameObject [] bulletPrefab;
+    [SerializeField] GameObject bulletPrefab;
     [SerializeField] float bulletForce = 20f;
-    [SerializeField] float timeSpawn;
-    [SerializeField] float repeatSpawnRate;
+    //[SerializeField] float timeSpawn;
+    //[SerializeField] float repeatSpawnRate;
 
 
     void Start()
     {
-        InvokeRepeating ( "Spawn" , timeSpawn , repeatSpawnRate );
+        //InvokeRepeating ( "Spawn" , timeSpawn , repeatSpawnRate );
     }
 
     // Update is called once per frame
@@ -27,11 +27,11 @@ public class Shot : MonoBehaviour
     public void Spawn()
     {
      
-        GameObject bullet = Instantiate(bulletPrefab[Random.Range(0, bulletPrefab.Length)], firePoint.position, firePoint.rotation);
+        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Rigidbody rbBullet = bullet.GetComponent<Rigidbody>();
         rbBullet.AddForce(firePoint.forward * bulletForce, ForceMode.Impulse);
 
-        Destroy(bullet, 10);
+        Destroy(bullet, 20);
     }
 
     /*public IEnumerator timeCD()
