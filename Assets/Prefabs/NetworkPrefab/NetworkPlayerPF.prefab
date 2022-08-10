@@ -512,7 +512,7 @@ MonoBehaviour:
   rotationSpeed: 1000
   velocitySpin: 1e+9
   rb: {fileID: 0}
-  inputForce: 180000
+  inputForce: 200000
   turnSmoothTime: 0.1
 --- !u!114 &1962177855963292286
 MonoBehaviour:
