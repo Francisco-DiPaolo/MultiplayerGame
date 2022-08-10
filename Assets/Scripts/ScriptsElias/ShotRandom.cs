@@ -7,6 +7,7 @@ public class ShotRandom : MonoBehaviour
     public Shot [] canones;
     public float LastShotTime = 0;
     public float intervalo = 1;
+
     // Start is called before the first frame update
     private void Awake() 
     {

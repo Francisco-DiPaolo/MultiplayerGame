@@ -9,6 +9,8 @@ public class Spawner : MonoBehaviour, INetworkRunnerCallbacks
 {
     public NetworkPlayer playerPrefab;
 
+    public int id;
+
     //Other components
     CharacterInputHandler characterInputHandler;
 
@@ -23,6 +25,8 @@ public class Spawner : MonoBehaviour, INetworkRunnerCallbacks
         {
             Debug.Log("OnPlayerJoined we are server. Spawning player");
             runner.Spawn(playerPrefab, Utils.GetRandomSpawnPoint(), Quaternion.identity, player);
+
+            id = player.PlayerId;
         }
         else Debug.Log("OnPlayerJoined");
     }

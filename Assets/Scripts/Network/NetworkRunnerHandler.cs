@@ -14,6 +14,8 @@ public class NetworkRunnerHandler : MonoBehaviour
 
     NetworkRunner networkRunner;
 
+    public int cantPlayer;
+
     void Start()
     {
         networkRunner = Instantiate(networkRunnerPrefab);
@@ -43,7 +45,8 @@ public class NetworkRunnerHandler : MonoBehaviour
             Scene = scene,
             SessionName = "TestRoom",
             Initialized = initialized,
-            SceneManager = sceneManager
+            SceneManager = sceneManager,
+            PlayerCount = cantPlayer
         });
     }
 }

@@ -152,6 +152,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5056700374797669474}
   - component: {fileID: 3872961362753450576}
+  - component: {fileID: 1928585870921900775}
   m_Layer: 0
   m_Name: 15986_Black_Powder_Cannon_v1
   m_TagString: Untagged
@@ -187,6 +188,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4340d0514e419644f8b2d2b61938d4a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _interpolationDataSource: 0
   firePoint: {fileID: 5148596604133932654}
   bulletPrefab: {fileID: 0}
   bulletForce: 15000
+--- !u!114 &1928585870921900775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5577376771534622424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectInterest: 0
+  DefaultInterestGroups: []
+  DestroyWhenStateAuthorityLeaves: 0
+  AllowStateAuthorityOverride: 1
+  AoiPositionSource: {fileID: 0}
+  Flags: 0
+  NetworkGuid:
+    RawGuidValue: 00000000000000000000000000000000
+  NestedObjects: []
+  NetworkedBehaviours: []
+  SimulationBehaviours: []

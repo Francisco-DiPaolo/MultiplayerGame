@@ -10,14 +10,17 @@ public class CharacterMovementHandler : NetworkBehaviour
     // Rotation
     public float velocity;
     public float rotationSpeed;
+    public float velocitySpin;
 
     // Other components
     Camera localCamera;
 
     GameObject cameraCine;
 
+    // Respawn
+    bool isRespawnRequested = false;
 
-    Rigidbody rb;
+    public Rigidbody rb;
 
     public float inputForce;
     public float turnSmoothTime = 0.1f;
@@ -32,6 +35,17 @@ public class CharacterMovementHandler : NetworkBehaviour
 
     public override void FixedUpdateNetwork()
     {
+        /*if (Object.HasStateAuthority)
+        {
+            if (isRespawnRequested)
+            {
+                Respawn();
+                return;
+            }
+        }*/
+
+        //transform.Rotate(0, 10 * Time.deltaTime * velocitySpin, 0);
+
         // Get the input from the network
         if (GetInput(out NetworkInputData networkInputData))
         {
@@ -41,23 +55,49 @@ public class CharacterMovementHandler : NetworkBehaviour
             rb.AddForce(movementDirection * inputForce * Runner.DeltaTime, ForceMode.Force);
 
             //transform.LookAt(cameraCine.transform.position);
-            
-            if(movementDirection != Vector3.zero)
+
+            /*if(movementDirection != Vector3.zero)
             {
                 Quaternion toRotation = Quaternion.LookRotation(movementDirection, Vector3.up);
 
                 transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
-            }
+            }*/
 
-            //rb.AddTorque(0, networkInputData.movementInput.x * velocity, 0);
-
-            /*
-            // Jump
-            if (networkInputData.isJumpPressed)
-                networkCharacterControllerPrototypeCustom.Jump();
-            */
+            CheckFallRespawn();
         }
     }
+
+    void CheckFallRespawn()
+    {
+        if (transform.position.y < -30)
+            transform.position = Utils.GetRandomSpawnPoint();
+    }
+
+    /*void CheckFallRespawn()
+    {
+        if (transform.position.y < -12)
+        {
+            if (Object.HasStateAuthority)
+            {
+                Debug.Log($"{Time.time} Respawn due to fall outside of map at position {transform.position}");
+
+                Respawn();
+            }
+        }
+    }
+   
+    public void RequestRespawn()
+    {
+        isRespawnRequested = true;
+    }
+
+    void Respawn()
+    {
+        CharacterMovementHandler.TeleportToPosition(Utils.GetRandomSpawnPoint());
+
+        isRespawnRequested = false;
+    }
+    */
 
     public void SetViewInputVector(Vector2 viewInput)
     {

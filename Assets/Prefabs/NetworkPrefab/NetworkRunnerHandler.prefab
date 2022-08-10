@@ -44,3 +44,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   networkRunnerPrefab: {fileID: 2519600307135218463, guid: 6dbe203dd1004644e90d78f83a470f1e, type: 3}
+  cantPlayer: 1
