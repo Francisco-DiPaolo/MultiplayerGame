@@ -18,6 +18,6 @@ public class Shot : NetworkBehaviour
         Rigidbody rbBullet = bullet.GetComponent<Rigidbody>();
         rbBullet.AddForce(firePoint.forward * bulletForce, ForceMode.Impulse);
 
-        Destroy(bullet, 20);
+        Destroy(bullet.gameObject, 2);
     }
 }
