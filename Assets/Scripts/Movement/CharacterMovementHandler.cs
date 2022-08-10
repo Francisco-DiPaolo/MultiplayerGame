@@ -46,6 +46,8 @@ public class CharacterMovementHandler : NetworkBehaviour
 
         //transform.Rotate(0, 10 * Time.deltaTime * velocitySpin, 0);
 
+        rb.AddTorque(transform.up * velocitySpin, ForceMode.Force);
+
         // Get the input from the network
         if (GetInput(out NetworkInputData networkInputData))
         {
